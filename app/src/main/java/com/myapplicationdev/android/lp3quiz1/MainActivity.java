@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
                 NotificationCompat.Builder builder = new
                         NotificationCompat.Builder(MainActivity.this, "default");
+                NotificationCompat.BigPictureStyle bigPic = new NotificationCompat.BigPictureStyle();
+                bigPic.bigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.koala));
+                bigPic.setBigContentTitle("This is Big Picture");
+                bigPic.setSummaryText("Koala!");
+                builder.setStyle(bigPic);
                 builder.setContentTitle("LP3 Quiz1");
                 builder.setContentText("Expand to see picture");
                 builder.setSmallIcon(android.R.drawable.btn_star_big_off);
@@ -105,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 inboxS.setSummaryText("List of entries");
 
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "default");
+                builder.setStyle(inboxS);
                 builder.setContentTitle("LP3 Quiz1");
                 builder.setContentText("Expand to see content");
                 builder.setSmallIcon(android.R.drawable.btn_star_big_off);
